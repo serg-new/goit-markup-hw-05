@@ -111,30 +111,41 @@ align-items: center;
     padding-top: 32px;
     padding-bottom: 32px;
 transition-property:  color;
-    transition-duration: 2500ms;
+    transition-duration: 250ms;
     transition-timing-function: var(--time);
-    
-    
 }
-.menu-link::after {
-    display: block;
-    opacity: 0;
-    width: 100%;
-    height: 3px;
-    background-color: currentColor;
+.current-page{
+    position: relative;
+    color: var(--accent-text-color);
+}
+
+
+
+.current-page::after {
     content: "";
-transform: translateY(28px);
+position: absolute;
+    display: block;
+   left: 0;
+ bottom: -2px;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: currentColor;
+    
+/*transform: translateY(28px);
 transition-property: color;
-    transition-duration: 2500ms;
-    transition-timing-function: var(--time);
+    transition-duration: 250ms;
+    transition-timing-function: var(--time);*/
 }
+
 
 .menu-link:focus {
     color: var(--accent-text-color);
+    
 
 }
 
-.menu-link:hover::after {
+.menu-link::after {
     opacity: 1;
     color: var(--accent-text-color);
 }
@@ -171,7 +182,7 @@ transition-property: color;
 
 
     transition-property: color;
-        transition-duration: 2500ms;
+        transition-duration: 250ms;
         transition-timing-function: var(--time);
     }
 
@@ -406,14 +417,14 @@ fill: var(--accent-text-color);
     border-radius: 50%;
     color:var(--icon);
 transition-property: background-color;
-    transition-duration: 2500ms;
+    transition-duration: 250ms;
     transition-timing-function: var(--time);
 }
 
 .soc-icon{
     gap: 10px;
     transition-property: color;
-        transition-duration: 2500ms;
+        transition-duration: 250ms;
         transition-timing-function: var(--time);
 }
 
@@ -484,7 +495,7 @@ background-color: var(--accent-text-color);
         color: var(--icon);
 
         transition-property: border-color, color;
-            transition-duration: 2500ms;
+            transition-duration: 250ms;
             transition-timing-function: var(--time);
     
 }
@@ -596,7 +607,7 @@ border-radius: 50%;
 color: var(--hero-text-color);
 
 transition-property: background-color;
-    transition-duration: 2500ms;
+    transition-duration: 250ms;
     transition-timing-function: var(--time);
 
         }
@@ -642,6 +653,9 @@ display: block;
 position: relative;
 overflow: hidden;
 
+transition-property: box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: var(--time);
 }
   
 
@@ -681,9 +695,11 @@ overflow: hidden;
         margin: 0;
 }
 .progect-card:hover {
-  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16),
+box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16),
 0px 4px 4px rgba(0, 0, 0, 0.06),
-0px 1px 1px rgba(0, 0, 0, 0.12)
+0px 1px 1px rgba(0, 0, 0, 0.12);
+
+
 }
 
 .project-invisible-text{
@@ -691,20 +707,24 @@ overflow: hidden;
     top: 0;
     left: 0;
     width: 100%;
-    
+    opacity: 0;
     padding: 63px 24px;
     background-color: var(--invisible);
-    transform: translateY(150%);
+    transform: translateX(100%);
+    pointer-events: none;
+   
+    transition-duration: 250ms;
+    transition-timing-function: var(--time);
 
-    color:var(--primary-white-color);
-    font-size: 18px;
-    line-height: 1.55;
-    letter-spacing: 0.03em;
-    transition: transform 250ms;
+    color: var(--primary-white-color);
+        font-size: 18px;
+        line-height: 1.55;
+        letter-spacing: 0.03em;
    
 }
 .progect-card:hover .project-invisible-text {
-    transform: translateY(0);
+transform: translateY(0);
+    opacity: 1;
 }
 
 
@@ -762,7 +782,7 @@ background-color: var(--button-focus);
         border-radius: 4px;
 
 transition-property: background-color, color, shadow;
-    transition-duration: 2500ms;
+    transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     
 }
@@ -786,7 +806,7 @@ box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12),
     left:0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+  
     opacity: 1;
     background-color: var(--fon-backdrop);
   transition: opacity 250ms var(--time),
@@ -802,22 +822,25 @@ box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12),
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50% ,-50%) scale(1);
-
+    transform: translate(-50% ,-50%) scale(0.9);
+    border-radius: 4px;
     height: 581px;
     width: 528px;
-    background-color: var(--primary-white-color);
+    background-color: var(--hero-text-color);
     transition: transform 250ms var(--time);
 }
 .modal-close-button{
     position: absolute;
-    top: 17px;
-    right: 17px;
+    top: 8px;
+    right: 8px;
     width: 30px;
     height: 30px;
-   left: 490px;
+
    border: 1px solid rgba(0, 0, 0, 0.1);
    border-radius: 50%;
-   
+   cursor: pointer;
    justify-content: center;
+   display: flex;
+   align-items: center;
+   background-color: var(--hero-text-color);
 }
